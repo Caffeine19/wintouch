@@ -22,12 +22,12 @@ func touchFile(fileNames []string) {
 				os.Exit(1)
 			}
 			green := color.New(color.FgGreen)
-			green.Printf("create succeeded:\t", fileName)
+			green.Println("create succeeded:\t", fileName)
 		} else {
 			err = os.Chtimes(fileName, time.Now(), time.Now())
 			if err != nil {
 				red := color.New(color.FgRed)
-				red.Print("update file date failed:\t", err)
+				red.Println("update file date failed:\t", err)
 				os.Exit(1)
 			}
 			blue := color.New(color.FgBlue)
