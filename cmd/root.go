@@ -5,6 +5,7 @@ Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"fmt"
 	"os"
 	"time"
 
@@ -45,7 +46,11 @@ var rootCmd = &cobra.Command{
 	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
 		// fmt.Println(args)
-		touchFile(args)
+		if len(args) > 0 {
+			touchFile(args)
+		} else {
+			fmt.Println("😊This is wintouch, use -h for more help.")
+		}
 	},
 }
 
